@@ -1,0 +1,35 @@
+{# Template for read full blog post #}
+{% extends 'blog/includes/base.html' %}
+
+{% block title %}{{post.slug}} - My Blog{% endblock %}
+
+{% block dynamic_content  %}
+
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1 class="mb-4">{{post.title}}</h1>
+      <h3 class="mb-4">{{post.category}}</h3>
+      <p class="text-muted">{{post.user}}, {{ post.create_at|date:"Y-m-d" }}</p>
+      <img src="{{post.formatted_url}}" style="width: 600px; height: 300px;" class="img-fluid mb-4" alt="Blog Image">
+      <p>{{post.content}}</p>
+    </div>
+    <div class="col-lg-4">
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title">Related Posts</h5>
+          <ul class="list-unstyled">
+            {# Show related posts if available, else show message #}
+            {% for post_item in releted_post %}
+                <li><a href="{{post_item.get_absolute_url}}">{{post_item.title}}</a></li>
+            {% empty %}
+                <li>No related Post found</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

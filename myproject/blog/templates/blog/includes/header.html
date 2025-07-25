@@ -1,0 +1,23 @@
+{# Template for blog header/navigation #}
+<header class="p-3 bg-dark text-white">
+  <div class="row">
+    <div class="col">
+      <a href="{% url 'blog:index' %}" class="blog-link" >Blog</a>
+    </div>
+    
+    <div class="col">
+      <div class="d-flex justify-content-center gap-3">
+        <a class="text-light text-decoration-none" href="{% url 'blog:index' %}">Home</a>
+        <a class="text-light text-decoration-none" href="{% url "blog:about" %}">About</a>
+        {# Show dashboard/logout if user is logged in, else show register/login #}
+        {% if user.is_authenticated %}
+          <a class="text-light text-decoration-none" href="{% url "blog:dashboard" %}">Dashboard</a>
+          <a class="text-light text-decoration-none" href="{% url "blog:logout" %}">Logout</a>
+        {% else %}
+          <a class="text-light text-decoration-none" href="{% url "blog:register" %}">Register</a>
+          <a class="text-light text-decoration-none" href="{% url "blog:login" %}">Login</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</header>

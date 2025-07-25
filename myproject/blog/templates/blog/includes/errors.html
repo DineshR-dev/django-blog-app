@@ -1,0 +1,36 @@
+{# Template for displaying form errors and messages #}
+<!-- Form Errors -->
+{% for field in form %}
+    {% if field.errors %}
+        <div class="col-12">
+            <span class="fw-bold">{{ field.label_tag }}</span>
+            {% for error in field.errors %}
+                <span class="text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endfor %}
+
+<!-- Non-Field Errors -->
+{% if form.non_field_errors %}
+    <div class="col-12">
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+                <span>{{ error }}</span>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- Messages (Success/Info/Error) -->
+{% if messages %}
+    <div class="col-12">
+        {% for message in messages %}
+            {% if message.level_tag == "success" %}
+                <div class="alert alert-success"> {{ message }}</div>
+            {% else %}
+                <div class="alert alert-danger"> {{ message }}</div>
+            {% endif %}    
+        {% endfor %}
+    </div>
+{% endif %}

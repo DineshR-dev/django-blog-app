@@ -1,0 +1,42 @@
+{# Template for editing a blog post #}
+{% extends 'blog/includes/base.html' %}
+
+{% block title %}Edit Post - My Blog{% endblock %}
+
+{% block dynamic_content  %}
+
+<div class="container-fluid">
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-4">
+                <h3>Edit Post</h3>
+                <div class="">
+                    <!-- Error messages -->
+                    {% include "blog/includes/errors.html" %}
+                </div>
+    
+                <div class="my-3">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {% for form_item in form %}
+                            <div class="form-group mb-3">
+                                <label for="{{form_item.id_for_label}}" class="form-label">{{form_item.label}}</label>
+                                {% if form_item.name == "img_url" %}
+                                    <input type="file" name="{{ form_item.name }}" id="{{ form_item.id_for_label }}" class="form-control">
+                                {% else %}    
+                                    {{ form_item }}
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                       
+                        <div class="my-3 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

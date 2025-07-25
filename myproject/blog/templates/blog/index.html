@@ -1,0 +1,48 @@
+{# Template for blog index page, list all published posts #}
+{% extends 'blog/includes/base.html' %}
+
+{% block dynamic_content %}
+  <div class="container-fluid">
+    <div class="row my-2">
+      <div class="col">
+        <h2>Latest Posts</h2>
+      </div>
+      <div class="col-3">
+        {% comment %} Search feature will be done in future updates {% endcomment %}
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search..." aria-label="Search" />
+          <button class="btn btn-outline-light btn-primary" type="button" id="button-search"><i class="bi bi-search"></i></button>
+        </div>
+      </div>
+      <div>
+        {% include "blog/includes/errors.html" %}
+      </div>
+    </div>
+    <div class="row m-3">
+    {% for post in post_list %}
+      <div class="col-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="{{post.formatted_url}}" class="img-fluid" alt="{{post.title}}" />
+              </div>
+              <div class="col-md-8">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.content | truncatewords:10}}</p>
+                <div class="d-flex justify-content-between">
+                  <a href={{post.get_absolute_url}}>Read More</a>
+                  <span class="text-decoration-none text-dark fw-bold" href="#">{{post.category}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    {% empty %}
+      <div class="alert alert-info">No Post Available Now</div>
+    {% endfor %}
+    {% include "blog/includes/pagination.html" %}
+    </div>
+  </div>
+{% endblock %}
