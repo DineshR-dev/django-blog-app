@@ -1,2 +1,23 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Django
+*.pyc
+__pycache__/
+*.sqlite3
+db.sqlite3
+.env
+*.log
+
+# Django static/media
+/staticfiles/
+/media/
+/static/
+/mediafiles/
+
+# VS Code and OS stuff
+.vscode/
+*.DS_Store
+
+# Environment
+venv/
+env/
