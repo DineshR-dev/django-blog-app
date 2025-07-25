@@ -60,15 +60,13 @@ Visit **http://127.0.0.1:8000/** to access the app.
 
 Below is a screenshot of the main page and the personalized user dashboard for authors:
 
-![Main Page]<img width="1263" height="748" alt="mMy Blog" src="https://github.com/user-attachments/assets/6a56316c-5f32-4269-a5db-442893ce31e0" />
+![Main Page](<img width="1263" height="748" alt="mMy Blog" src="https://github.com/user-attachments/assets/6a56316c-5f32-4269-a5db-442893ce31e0" />)
 *Example of the blog's homepage with posts listed by category.*
 
-![Dashboard]<img width="1263" height="1025" alt="Dashboard - My Blog" src="https://github.com/user-attachments/assets/0a598944-c620-4eb1-a350-e26d7b3b6512" />  
+![Dashboard](<img width="1263" height="1025" alt="Dashboard - My Blog" src="https://github.com/user-attachments/assets/0a598944-c620-4eb1-a350-e26d7b3b6512" /> ) 
 *Example of the author’s personalized dashboard for managing posts.*
 
-![Blog Reading Page]
- <img width="1263" height="706" alt="My Blog" src="https://github.com/user-attachments/assets/b6e9339b-86d1-4528-a33e-007a08f16f07" />
- 
+![Blog Reading Page](<img width="1263" height="706" alt="My Blog" src="https://github.com/user-attachments/assets/b6e9339b-86d1-4528-a33e-007a08f16f07" />)
 *Example of a single blog post being read by a user with full content.*
 
 
