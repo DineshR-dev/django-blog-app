@@ -131,7 +131,14 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
-# Dummy email settings for development
+
+# ------------------------------------------------------------------------------
+# Email Configuration (Dummy Settings for Local Development Only)
+# These settings use Mailtrap (https://mailtrap.io) for testing email functionality.
+# DO NOT use these credentials in production.
+# Replace with your actual email service provider settings when deploying.
+# ------------------------------------------------------------------------------
+
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = '7216cae0b03f32'
 EMAIL_HOST_PASSWORD = 'cca063aa6690e6'
